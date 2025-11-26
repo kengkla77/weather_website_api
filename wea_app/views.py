@@ -5,8 +5,8 @@ def index(request):
     return render(request, 'wea_app/base.html')
 
 def get_weather(request):
-    city = request.GET.get('city', 'Bangkok') # ค่า default
-    api_key = '262ea38da41accb3a4887fec9c57855b' # <--- ใส่ API Key ของคุณตรงนี้
+    city = request.GET.get('city', 'Bangkok') 
+    api_key = os.getenv('OPENWEATHER_API_KEY')
     url = f'http://api.openweathermap.org/data/2.5/weather?q={city}&units=metric&appid={api_key}'
     
     context = {}
