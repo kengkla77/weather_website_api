@@ -1,0 +1,38 @@
+{% if found %}
+    <script>
+        document.getElementById('body-bg').className = "h-screen w-full bg-gradient-to-br {{ bg_class }} flex items-center justify-center transition-colors duration-1000";
+    </script>
+
+    <div class="max-w-md mx-auto glass rounded-3xl p-8 text-white fade-in shadow-2xl">
+        <div class="flex justify-between items-center mb-6">
+            <div>
+                <h2 class="text-3xl font-bold">{{ city }}</h2>
+                <p class="text-lg opacity-80 capitalize">{{ description }}</p>
+            </div>
+            <img src="http://openweathermap.org/img/wn/{{ icon }}@2x.png" alt="weather icon" class="w-24 h-24 drop-shadow-lg">
+        </div>
+
+        <div class="text-center mb-6">
+            <span class="text-8xl font-thin tracking-tighter">{{ temp }}°</span>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 text-center">
+            <div class="bg-white/10 rounded-xl p-3">
+                <p class="text-sm opacity-70">Outfit Suggestion</p>
+                <p class="font-bold text-lg">
+                    {% if temp > 30 %} 👕 T-Shirt {% else %} 🧥 Jacket {% endif %}
+                </p>
+            </div>
+            <div class="bg-white/10 rounded-xl p-3">
+                <p class="text-sm opacity-70">Mood</p>
+                <p class="font-bold text-lg">
+                    {% if 'Rain' in description %} ☕ Coffee Time {% else %} 🍦 Ice Cream {% endif %}
+                </p>
+            </div>
+        </div>
+    </div>
+{% else %}
+    <div class="max-w-md mx-auto bg-red-500/80 text-white p-4 rounded-xl text-center fade-in">
+        City not found. Please try again.
+    </div>
+{% endif %}
