@@ -26,7 +26,7 @@ Follow these steps to run the project locally:
 
 1.  **Clone the repository**
     ```bash
-    git clone [https://github.com/your-username/django-weather-app.git](https://github.com/your-username/django-weather-app.git)
+    git clone https://github.com/kengkla77/weather_website_api.git
     cd django-weather-app
     ```
 
