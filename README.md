@@ -24,49 +24,49 @@ A modern, responsive weather forecast application built with **Django** and **HT
 
 Follow these steps to run the project locally:
 
-1.  **Clone the repository**
-    ```bash
-    git clone https://github.com/kengkla77/weather_website_api.git
-    cd django-weather-app
-    ```
+1. **Clone the repository**
+   ```bash
+   git clone [https://github.com/kengkla77/weather_website_api.git](https://github.com/kengkla77/weather_website_api.git)
+   cd weather_website_api
+   # Windows
+2. **Create a Virtual Environment**
+ ```bash
+python -m venv venv
+venv\Scripts\activate
 
-2.  **Create a Virtual Environment**
-    ```bash
-    # Windows
-    python -m venv venv
-    venv\Scripts\activate
+# macOS/Linux
+python3 -m venv venv
+source venv/bin/activate
+```
 
-    # macOS/Linux
-    python3 -m venv venv
-    source venv/bin/activate
-    ```
+3. **Install Dependencies**
+ ```bash
+# Install Django, Requests, and python-dotenv (for managing API keys)
+pip install django requests python-dotenv
+```
 
-3.  **Install Dependencies**
-    ```bash
-    pip install django requests
-    ```
+4. **Configuration (Environment Variables)**
+ ```bash
+OPENWEATHER_API_KEY=your_api_key_here
+DEBUG=True
+```
 
-4.  **Configure API Key**
-    * Open `wea_app/views.py`.
-    * Replace the placeholder with your OpenWeatherMap API key:
-        ```python
-        api_key = 'YOUR_API_KEY_HERE'
-        ```
+6. **Run the Server**
+ ```bash
+python manage.py runserver
+```
 
-5.  **Run the Server**
-    ```bash
-    python manage.py runserver
-    ```
+8. **Access the App**
+ ```bash
+Open your browser and go to http://127.0.0.1:8000/.
+```
 
-6.  **Access the App**
-    * Open your browser and go to `http://127.0.0.1:8000/`.
-
-## 📂 Project Structure
-
-```text
+**Project Structure**
+ ```bash
 weather_project/
 ├── db.sqlite3
 ├── manage.py
+├── .env                  # (Create this file manually)
 ├── wea_app/
 │   ├── migrations/
 │   ├── static/
@@ -80,3 +80,4 @@ weather_project/
 └── weather_project/
     ├── settings.py
     └── urls.py
+```
